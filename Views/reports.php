@@ -3,7 +3,7 @@ session_start();
 include '../config/config.php';
 include '../config/codeGen.php';
 include '../config/checklogin.php';
-include '../fuctions/expense.php';
+include '../fuctions/reports.php';
 check_login()
 ?>
 <!DOCTYPE html>
@@ -86,8 +86,8 @@ check_login()
                                             <form method="post" class="row gy-2 gx-3 align-items-center">
                                                 <div class="col-md-2">
                                                     <label for="exampleFormControlInput1" class="form-label">Category Name</label>
-                                                    <input type="hidden" class="form-control" id="exampleFormControlInput1" name="user_id" value="">
-                                                    <select class="form-select" id="floatingSelect" name="category_status" aria-label="Floating label select example">
+                                                    <input type="hidden" class="form-control" id="exampleFormControlInput1" name="expense_user_id" value="<?php echo $user_id?>">
+                                                    <select class="form-select" id="floatingSelect" name="category_name" aria-label="Floating label select example">
 
                                                         <option selected value="all">All</option>
                                                         <?php 
@@ -112,11 +112,11 @@ if (mysqli_num_rows($user_sql) > 0) {
                                                 </div>
                                                 <div class="col-md-2">
                                                     <label for="exampleFormControlInput1" class="form-label">Report Form</label>
-                                                    <select class="form-select" id="floatingSelect" name="category_status" aria-label="Floating label select example">
+                                                    <select class="form-select" id="floatingSelect" name="form_type" aria-label="Floating label select example">
                                         
-                                                        <option value="daily">PDF</option>
-                                                        <option value="weekly">Word</option>
-                                                        <option value="monthly">Excel</option>
+                                                        <option value="pdf">PDF</option>
+                                                        <option value="word">Word</option>
+                                                        <option value="excel">Excel</option>
                                                        
                                                     </select>
 
@@ -125,11 +125,11 @@ if (mysqli_num_rows($user_sql) > 0) {
 
                                                 <div class="col-md-3">
                                                     <label for="exampleFormControlInput1" class="form-label">From</label>
-                                                    <input type="date" required class="form-control" id="exampleFormControlInput1" name="user_email" value="">
+                                                    <input type="date" required class="form-control" id="exampleFormControlInput1" name="start" value="">
                                                 </div>
                                                 <div class="col-md-3">
                                                     <label for="exampleFormControlInput1" class="form-label">To</label>
-                                                    <input type="date" required class="form-control" id="exampleFormControlInput1" name="user_email" value="">
+                                                    <input type="date" required class="form-control" id="exampleFormControlInput1" name="end" value="">
                                                 </div>
                                                 <div class="d-flex pt-2 justify-content-md-center">
                                                     <button type="submit" class="btn btn-outline-primary" name="download_report">Download</button>
