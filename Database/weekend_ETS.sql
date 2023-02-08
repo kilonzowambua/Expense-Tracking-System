@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 07, 2023 at 05:59 PM
+-- Generation Time: Feb 08, 2023 at 03:15 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categories` (
   `category_id` int(11) NOT NULL,
-  `category_name` varchar(11) NOT NULL,
+  `category_name` varchar(200) NOT NULL,
   `category_init_expense` varchar(200) NOT NULL,
   `category_status` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
