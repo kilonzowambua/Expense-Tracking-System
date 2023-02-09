@@ -36,7 +36,7 @@
 
 <link rel="stylesheet" href="../public/css/style1.css" />
 <link rel="stylesheet" href="../public/css/colors/default.css" id="colorSkinCSS">
-<link href="../public/js/toastr.min.js" rel="stylesheet" type="text/css" />
+<link href="../public/css/toastr.min.css" rel="stylesheet" type="text/css" />
 <?php
     /* Alert Sesion Via Alerts */
     if (isset($_SESSION['success'])) {

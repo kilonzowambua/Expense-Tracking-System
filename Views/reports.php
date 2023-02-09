@@ -115,7 +115,7 @@ if (mysqli_num_rows($user_sql) > 0) {
                                                     <select class="form-select" id="floatingSelect" name="form_type" aria-label="Floating label select example">
                                         
                                                         <option value="pdf">PDF</option>
-                                                        <option value="word">Word</option>
+                        
                                                         <option value="excel">Excel</option>
                                                        
                                                     </select>

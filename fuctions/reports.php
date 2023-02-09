@@ -2,8 +2,11 @@
 // Load library
 require '../vendor/autoload.php';
 
+
+
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
 
 if (isset($_POST['download_report'])) {
     #Declare Vairable
@@ -13,6 +16,11 @@ if (isset($_POST['download_report'])) {
     $form_type = mysqli_real_escape_string($mysqli, $_POST['form_type']);
     $start = mysqli_real_escape_string($mysqli, $_POST['start']);
     $end = mysqli_real_escape_string($mysqli, $_POST['end']);
+
+
+
+#This is Excel Format Only
+
 
     if ($form_type == 'excel' && $category_status == 'all' && $category_name == 'all') {
         // Create spreadsheet object
@@ -208,6 +216,21 @@ elseif ($form_type == 'excel' && $category_status != 'all' && $category_name != 
    $xlsxWriter = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($spreadsheet, 'Xlsx');
    $xlsxWriter = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($spreadsheet);
    exit($xlsxWriter->save('php://output'));
-}
+#This is Excel Format Only
+
+
+
+
+
+
+#This is Pdf
+}elseif ($form_type == 'pdf' && $category_status == 'all' && $category_name == 'all') {
+    
+
+
 }
 
+
+}
+    
+    

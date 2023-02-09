@@ -102,7 +102,12 @@ if(isset($_POST['delete_expense'])){
     #Run Query
     $query=mysqli_query($mysqli,"DELETE  cat,ex  FROM categories AS cat JOIN expenses AS ex
     ON cat.category_id = ex.expense_category_id WHERE ex.expense_category_id='{$category_id}'");
-
+if ($query) {
+    $_SESSION['success'] = 'Expense Is Deleted';
+   
+}else{
+    $err = "Failed !Try Again";
+}
 
 }
 
