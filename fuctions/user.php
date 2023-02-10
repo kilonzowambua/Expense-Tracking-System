@@ -88,3 +88,30 @@ if(isset($_POST['update_income'])){
     
 }
 }
+
+#User reset password
+if(isset($_POST['reset_password'])){
+    #Declare variable
+    $user_email=mysqli_real_escape_string($mysqli,$_POST['user_email']);
+    #Generate Random Value
+  $min = 3;
+  $max = 4;
+  $password = mt_rand($min, $max);
+  $user_password=password_hash($password, PASSWORD_DEFAULT);
+  
+  #Sql 
+  $query= mysqli_query($mysqli,"SELECT * FROM users WHERE user_email='{$user_email}'");
+  
+#Update 
+$queryupdate = mysqli_query($mysqli,"UPDATE `users` SET `user_password`='{$user_password}' WHERE `user_email`='{$user_email}'");
+if(mysqli_num_rows($query)>0 && $queryupdate){
+
+#Mail New Password
+include('../mailers/reset_password.php');
+$mail->send();
+    $_SESSION['success'] = 'Your Password as Being reset.Check your Email';
+}else{
+$err = "Email didnot Match";   
+ }
+}
+

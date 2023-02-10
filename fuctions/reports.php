@@ -7,7 +7,6 @@ require '../vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
-
 if (isset($_POST['download_report'])) {
     #Declare Vairable
     $expense_user_id = mysqli_real_escape_string($mysqli, $_POST['expense_user_id']);

@@ -37,7 +37,7 @@
                                                 <button type="submit" name="sign_in" class="btn_1 full_width text-center">Sign in</button>
                                                 <p>Need an account? <a href="sign_up"> Sign Up</a></p>
                                                 <div class="text-center">
-                                                    <a href="#"  class="pass_forget_btn">Forget Password?</a>
+                                                    <a href="reset_password"  class="pass_forget_btn">Forget Password?</a>
                                                 </div>
                                             </form>
                                         </div>
