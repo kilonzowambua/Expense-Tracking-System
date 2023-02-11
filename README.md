@@ -1,6 +1,8 @@
 # Expense-Tracking-System
 ## Pending Fixes
--Mailer
+-Features
+
+- Mailer
 - Cron Jobs
 - Documenting It
   
