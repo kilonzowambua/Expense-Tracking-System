@@ -1,9 +1,6 @@
 # Expense-Tracking-System
 ## Pending Fixes
-
-- Report:
-  - `Backend`
+-Mailer
 - Cron Jobs
-- Reset Password
 - Documenting It
   
