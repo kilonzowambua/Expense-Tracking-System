@@ -380,7 +380,7 @@ elseif ($form_type == 'excel' && $category_status != 'all' && $category_name != 
      $dompdf->set_paper('A4');
      $dompdf->set_option('isHtml5ParserEnabled', true);
      $dompdf->render();
-     $dompdf->stream('Sales From ' . $start . ' To ' . $end, array("Attachment" => 1));
+     $dompdf->stream('Expenses From ' . $start . ' To ' . $end, array("Attachment" => 1));
      $options = $dompdf->getOptions();
      $options->setDefaultFont('');
      $dompdf->setOptions($options);
@@ -539,7 +539,7 @@ elseif ($form_type == 'excel' && $category_status != 'all' && $category_name != 
  $dompdf->set_paper('A4');
  $dompdf->set_option('isHtml5ParserEnabled', true);
  $dompdf->render();
- $dompdf->stream('Sales From ' . $start . ' To ' . $end, array("Attachment" => 1));
+ $dompdf->stream('Expenses From ' . $start . ' To ' . $end, array("Attachment" => 1));
  $options = $dompdf->getOptions();
  $options->setDefaultFont('');
  $dompdf->setOptions($options);
@@ -699,7 +699,7 @@ elseif ($form_type == 'excel' && $category_status != 'all' && $category_name != 
     $dompdf->set_paper('A4');
     $dompdf->set_option('isHtml5ParserEnabled', true);
     $dompdf->render();
-    $dompdf->stream('Sales From ' . $start . ' To ' . $end, array("Attachment" => 1));
+    $dompdf->stream('Expenses From ' . $start . ' To ' . $end, array("Attachment" => 1));
     $options = $dompdf->getOptions();
     $options->setDefaultFont('');
     $dompdf->setOptions($options);
@@ -858,7 +858,7 @@ elseif ($form_type == 'excel' && $category_status != 'all' && $category_name != 
     $dompdf->set_paper('A4');
     $dompdf->set_option('isHtml5ParserEnabled', true);
     $dompdf->render();
-    $dompdf->stream('Sales From ' . $start . ' To ' . $end, array("Attachment" => 1));
+    $dompdf->stream('Expenses From ' . $start . ' To ' . $end, array("Attachment" => 1));
     $options = $dompdf->getOptions();
     $options->setDefaultFont('');
     $dompdf->setOptions($options);
