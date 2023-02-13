@@ -2,8 +2,8 @@
 #Create a New Expense With No Existing Fiscal Month
 if (isset($_POST['add_expense_first']) || isset($_POST['add_expense'])) {
     #Declare all required variables
-    $fm_year = date('n');
-    $fm_month = date('Y');
+    $fm_year = date('Y');
+    $fm_month = date('n');
     $user_id = mysqli_real_escape_string($mysqli, $_POST['user_id']);
     #Get user Salary
     $user_sql = mysqli_query($mysqli, "SELECT * FROM users WHERE user_id = '{$user_id}'");
