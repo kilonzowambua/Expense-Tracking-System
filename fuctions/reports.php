@@ -33,15 +33,15 @@ if (isset($_POST['download_report'])) {
         $sheet = $spreadsheet->getActiveSheet();
         $sheet->setTitle(date('d_m_Y'), true);
         // Add header row
-                $sheet->setCellValue('A1', 'Expense Name');
-                $sheet->setCellValue('B1', 'Expense Type');
-                $sheet->setCellValue('C1', 'Expense Date');
-                $sheet->setCellValue('D1', 'Expense Budget');
-                $sheet->setCellValue('E1', 'Expense cost');
+                $sheet->setCellValue('A2', 'Expense Name');
+                $sheet->setCellValue('B2', 'Expense Type');
+                $sheet->setCellValue('C2', 'Expense Date');
+                $sheet->setCellValue('D2', 'Expense Budget');
+                $sheet->setCellValue('E2', 'Expense cost');
         
         $user_sql = mysqli_query($mysqli, "SELECT * FROM expenses AS ex INNER JOIN fiscal_month AS fm ON fm.fm_id=ex.expense_fm_id INNER JOIN categories AS ca ON ca.category_id=ex.expense_category_id WHERE DATE_FORMAT(`expense_date`, '%Y-%m-%d') BETWEEN '{$start}'AND '{$end}' AND ex.expense_user_id ='{$expense_user_id}' ORDER BY ex.expense_date DESC");
         if (mysqli_num_rows($user_sql) > 0) {
-            $row = 2;
+            $row = 3;
             $total = 0;
             while ($data = mysqli_fetch_array($user_sql)) {
                 $sheet->setCellValue('A' . $row, $data['category_name']);
@@ -242,9 +242,7 @@ elseif ($form_type == 'excel' && $category_status != 'all' && $category_name != 
                      padding: 4px;
                  }
  
-                 tr {
-                     page-break-after: always;
-                 }
+                 
  
                  th {
                      text-align: left;
@@ -399,9 +397,7 @@ elseif ($form_type == 'excel' && $category_status != 'all' && $category_name != 
                  padding: 4px;
              }
 
-             tr {
-                 page-break-after: always;
-             }
+          
 
              th {
                  text-align: left;
@@ -559,9 +555,7 @@ elseif ($form_type == 'excel' && $category_status != 'all' && $category_name != 
                     padding: 4px;
                 }
    
-                tr {
-                    page-break-after: always;
-                }
+              
    
                 th {
                     text-align: left;
@@ -720,9 +714,7 @@ elseif ($form_type == 'excel' && $category_status != 'all' && $category_name != 
                     padding: 4px;
                 }
 
-                tr {
-                    page-break-after: always;
-                }
+                
 
                 th {
                     text-align: left;
