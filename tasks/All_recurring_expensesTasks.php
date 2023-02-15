@@ -15,7 +15,7 @@ declare(strict_types=1);
 use Crunz\Schedule;
 
 $scheduler = new Schedule();
-$task1 = $scheduler->run(PHP_BINARY . ' /opt/lampp/htdoc/Weekend/Expense Tracking System/tasks/Scripts/update_fm.php');
+$task1 = $scheduler->run(PHP_BINARY . ' /opt/lampp/htdoc/Weekend/Expense Tracking System/tasks/Scripts/update_yearly_expenses.php');
 $task1
     ->description('Year Expenses')
     ->preventOverlapping()
