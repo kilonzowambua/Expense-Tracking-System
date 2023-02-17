@@ -1,8 +1,7 @@
 <?php
 include('/opt/lampp/htdocs/Weekend/ExpenseTrackingSystem/config/config.php');
 #First Query
-$user_sql = mysqli_query($mysqli, "SELECT * FROM expenses AS ex INNER JOIN fiscal_month AS fm ON fm.fm_id=ex.expense_fm_id INNER JOIN categories AS ca ON ca.category_id=ex.expense_category_id WHERE ca.category_status='yearly' AND 
-fm_year=YEAR(CURRENT_DATE) - 1 ORDER BY ex.expense_date DESC");
+$user_sql = mysqli_query($mysqli, "SELECT * FROM expenses AS ex INNER JOIN fiscal_month AS fm ON fm.fm_id=ex.expense_fm_id INNER JOIN categories AS ca ON ca.category_id=ex.expense_category_id WHERE ca.category_status='daily' AND fm_year=YEAR(CURRENT_DATE) AND fm_month=MONTH(CURRENT_DATE) ORDER BY ex.expense_date DESC");
 if (mysqli_num_rows($user_sql) > 0) {
 
         #Second Query
